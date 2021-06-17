@@ -1,0 +1,252 @@
+/* Utilities */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "KoHo", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+header {
+  height: 200vh;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+body {
+  perspective: 1000px;
+  justify-content: center;
+  align-content: center;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1 !important;
+}
+
+i {
+  padding-left: 5px;
+}
+
+.green {
+  color: greenyellow;
+}
+/* Main Page */
+#main {
+  height: 100vh;
+  color: white;
+}
+
+.row {
+  padding: 0 !important;
+}
+
+.arrow {
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  height: 100px;
+  width: 100px;
+  clip-path: polygon(
+    40% 0%,
+    40% 20%,
+    100% 20%,
+    100% 80%,
+    40% 80%,
+    40% 100%,
+    0% 50%
+  );
+  z-index: 2;
+}
+
+.arrow-info {
+  width: 100px;
+  position: absolute;
+  left: -10%;
+  top: 36%;
+  z-index: 2;
+}
+
+/* Projects Page */
+#projects {
+  position: relative;
+  z-index: 1;
+  font-family: "Syne Mono", monospace;
+  background: white;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+#projects button {
+  color: white;
+  margin: auto !important;
+  width: 100px;
+  height: 55px;
+  font-size: 15px !important;
+  font-weight: bolder;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#projects img:hover {
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: -20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.yellow {
+  background-color: rgb(139, 28, 65);
+}
+
+.lime {
+  background-color: lime;
+}
+
+.team {
+  background-color: #fda085;
+}
+
+.quiz {
+  background-color: aquamarine;
+}
+
+.vampire {
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+}
+
+#dots {
+  position: absolute;
+  z-index: 5000;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  margin: 5px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+#prevtBtn {
+  color: black;
+  font-size: 45px;
+  margin: -15px 15px 0px 15px;
+  top: -27%;
+  left: 7%;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#nextBtn {
+  color: black;
+  font-size: 45px;
+  margin: 15px 15px 0px 15px;
+  top: -27%;
+  left: 83%;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.slide span {
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.img-fluid {
+  height: 50vh !important;
+}
+
+.info {
+  position: relative;
+  top: calc(-5px - 50%);
+  height: 50vh;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.info-bot {
+  position: relative;
+  top: -50%;
+  height: 50vh;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.box:nth-child(2) {
+  background-color: #00718b;
+}
+.box:nth-child(3) {
+  background-color: #4a5619;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    margin-top: 10px !important;
+    width: 100%;
+    height: 650px;
+    transform-style: preserve-3d;
+    border-radius: 50px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  }
+  button {
+    margin: auto;
+    width: 125px;
+    height: 75px;
+    font-size: 13px;
+    font-weight: bolder;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}
