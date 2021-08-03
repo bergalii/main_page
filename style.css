@@ -17,7 +17,7 @@ body {
 
 header {
   height: 200vh;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: white;
 }
 
 body {
@@ -43,6 +43,11 @@ i {
 
 .green {
   color: greenyellow;
+}
+
+.white {
+  color: white;
+  font-size: 21px;
 }
 /* Main Page */
 #main {
@@ -85,7 +90,6 @@ i {
   position: relative;
   z-index: 1;
   font-family: "Syne Mono", monospace;
-  background: white;
   height: 100vh;
   margin: auto;
   overflow: hidden;
@@ -194,8 +198,9 @@ i {
   top: 0px;
   left: 0px;
   z-index: 1;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: white;
 }
+
 .slide span {
   display: block;
   position: absolute;
@@ -224,9 +229,11 @@ i {
   visibility: hidden;
 }
 
-.box:nth-child(2) {
-  background-color: #00718b;
+.sub-info {
+  position: relative;
+  top: 25%;
 }
+
 .box:nth-child(3) {
   background-color: #4a5619;
 }
