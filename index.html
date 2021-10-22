@@ -9,12 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Berk|Welcome</title>
+    <title>Berk | Welcome</title>
    
 </head>
 
 <body style="max-height: 200vh;">
-    <header>
+    <header>    
+        <div id="main-page-mobile">
+            <img src="./images//pic2.jfif" class="rounded-circle img-fluid mt-2 mb-4 ml-4" alt="">
+            <div id="accordion">
+                <div class="mt-2">
+                    <button class="btn btn-dark w-100 d-flex skills" onclick="toggleIcon(this)" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"><h4><span class="green">Software Engineering</span></h4><i class="fas fa-plus mt-2"></i></button>
+                </div>
+                <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"  data-parent="#accordion">
+                    <div class="bg-dark mt-2 container">
+                        <div class="row">
+                            <h4 class="word p-3">Python</h4>
+                            <h4 class="word  p-3">C++</h4>
+                            <h4 class="word  p-3 ml-4">Javascript</h4>
+                        </div>
+                        <div class="row">
+                            <h4 class="word p-3">HTML&CSS</h4>
+                            <h4 class="word p-3" >REACT</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id='main'>
             <button href='#' onclick="scrollBetween()" class="btn arrow bg-dark"></button>
             <div class="arrow-info bg-dark green rounded"><p class="text-center">Goes to the projects!</p></div>
@@ -23,15 +44,17 @@
                   <div class="col" style="height: 100vh;">
                     <h1 class="mt-2">About <span class="green   ">Me</span></h1>
                     <h6 style="line-height: 1.6;">My name is Berk Ali Çam. I currently live in Izmir,Turkey. Altough i have a mechanical engineering background, i discovered my passion
-                        for coding towards the end of my Bsc. I have been self-learning programming since two years and my ultimate goal is to become a robotics software engineer. Besides 
-                        trying to create web applications, i also participated in a semi-autonomous underwater vehicle project as my graduation project. I try to improve everyday and i am
-                        looking forward to work one day as a programmer. In the last two years, i've learned the basics (and more) of HTML&CSS , Javascript, Python and C++. 
-                        As much as i like to code in my free time, another thing i am a fan of is to play and  watch (NBA) basketball. My some other hobbies are hiking, playing Leauge of Legends
+                        for coding towards the end of my Bsc. I have been self-learning programming since two years and my  goal is to pursue a career in which i can develop myself both in 
+                        mechanical and software engineering . Besides trying to create web applications, i also participated in a semi-autonomous underwater vehicle project as my graduation project
+                        . I learned about ROS while carrying out the project. I try to improve everyday and i am
+                        looking forward to work one day in a foreign country, especially Germany. I've been learning German since three years and staying in Germany for six months as an exchange student
+                        not only helped me practice my German, but also made me fall in love with the German culture.
+                        As much as i like to code and learn German; another thing i am a fan of is to play and  watch (NBA) basketball. My some other hobbies are hiking, playing Leauge of Legends
                         and last but not least, drinking coffee.
                     </h6>
                   </div>
                   <div class="col border-left" style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); color: black; height: 100vh;">
-                    <img src="./images//berk.jpg" class="rounded-circle img-fluid mt-2 mb-4 ml-4" alt="">
+                    <img src="./images/pic2.jfif" class="rounded-circle img-fluid mt-2 mb-4 ml-4" alt="">
                     <div class="text-white p-4 bg-dark border rounded">
                         <h1 class="text-center">Berk Ali <span class="green">Çam</span></h1>
                         <div class="d-flex mt-2">
