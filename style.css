@@ -243,18 +243,28 @@ i {
 }
 
 @media only screen and (max-width: 600px) {
-  #main {
+  #main,
+  #projects,
+  #prevtBtn,
+  #nextBtn {
     display: none;
   }
 
   #main-page-mobile {
     display: block;
   }
-  .row {
-    height: 100vh !important;
+
+  #main-page-mobile button {
+    padding: 0;
   }
 
-  #projects {
-    display: none;
+  .img-mobile {
+    width: 125px;
+    height: 150px !important;
+  }
+
+  .word {
+    color: white !important;
+    font-size: medium;
   }
 }

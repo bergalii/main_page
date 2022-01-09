@@ -1,14 +1,17 @@
 
-    var tween;
-    const container = document.querySelector('.container');
-    const arrow = document.querySelector('.arrow');
-    const arrowInfo = document.querySelector('.arrow-info');
-    const height = window.innerHeight;
+var tween;
+const container = document.querySelector('.container');
+const arrow = document.querySelector('.arrow');
+const arrowInfo = document.querySelector('.arrow-info');
+const height = window.innerHeight;
+const width = window.innerWidth;    
+console.log(width);
 
-    //Make sure to go the top  after each reload and disable scrolling until arrow animation completes
-    window.onbeforeunload = function () { window.scrollTo(0, 0) };
-    document.body.style.overflow = "hidden";
+//Make sure to go the top  after each reload and disable scrolling until arrow animation completes
+window.onbeforeunload = function () { window.scrollTo(0, 0) };
+document.body.style.overflow = "hidden";
 
+if (width > 600) {
     //ARROW ANIMATIONS
     //Set the poisiton of the arrow in HTML
     const setPosition = (rot, posy) => {
@@ -101,143 +104,150 @@
             arrow.classList.toggle("down");
         }
     }
+}
 
-    //MAIN PAGE ANIMATIONS
-    //Toggle between plus and minus icons
-    const toggleIcon = (e) => {
+
+//MAIN PAGE ANIMATIONS
+//Toggle between plus and minus icons
+const toggleIcon = (e) => {
+    if (width > 600) {
         document.querySelectorAll('.skills').forEach(el => el !== e ? el.lastChild.className = 'fas fa-plus mt-2' : null);
         e.lastChild.classList.contains('fa-plus') ? e.lastChild.className = 'fas fa-minus mt-2' : e.lastChild.className = 'fas fa-plus mt-2'
     }
+    else {
+        document.querySelectorAll('.skills').forEach(el => el !== e ? el.lastChild.className = 'fas fa-plus mt-1' : null);
+        e.lastChild.classList.contains('fa-plus') ? e.lastChild.className = 'fas fa-minus mt-1' : e.lastChild.className = 'fas fa-plus mt-1'
+    }
+        
+}
 
 
-    //Floating words
-    const randomX = random(1, 10);
-    const randomY = random(1, 10);
-    const randomTime = random(3, 5);
-    const randomTime2 = random(5, 10);
-    const randomAngle = random(-10, 10);
+//Floating words
+const randomX = random(1, 10);
+const randomY = random(1, 10);
+const randomTime = random(3, 5);
+const randomTime2 = random(5, 10);
+const randomAngle = random(-10, 10);
 
-    const words = gsap.utils.toArray('.word');
-    words.forEach(word => {
-        gsap.set(word, {
-            x: randomX(-1),
-            y: randomX(1),
-            rotation: randomAngle(-1)
-        });
-
-        moveX(word, 1);
-        moveY(word, -1);
-        rotate(word, 1);
+const words = gsap.utils.toArray('.word');
+words.forEach(word => {
+    gsap.set(word, {
+        x: randomX(-1),
+        y: randomX(1),
+        rotation: randomAngle(-1)
     });
 
-    function rotate(target, direction) {
-  
-        gsap.to(target, randomTime2(), {
-            rotation: randomAngle(direction),
-            ease: Sine.easeInOut,
-            onComplete: rotate,
-            onCompleteParams: [target, direction * -1]
-        });
-    }
+    moveX(word, 1);
+    moveY(word, -1);
+    rotate(word, 1);
+});
 
-    function moveX(target, direction) {
-  
-        gsap.to(target, randomTime(), {
-            x: randomX(direction),
-            ease: Sine.easeInOut,
-            onComplete: moveX,
-            onCompleteParams: [target, direction * -1]
-        });
-    }
+function rotate(target, direction) {
 
-    function moveY(target, direction) {
-  
-        gsap.to(target, randomTime(), {
-            y: randomY(direction),
-            ease: Sine.easeInOut,
-            onComplete: moveY,
-            onCompleteParams: [target, direction * -1]
-        });
-    }
-
-    function random(min, max) {
-        const delta = max - min;
-        return (direction = 1) => (min + delta * Math.random()) * direction;
-    }
-
-
-
-    //PROJECTS PAGE ANIMATIONS
-    // Projects slides
-    gsap.set('#projects', { perspective: 700 });
-    var slides = document.querySelectorAll('.slide');
-    tl = gsap.timeline({
-        paused: true
+    gsap.to(target, randomTime2(), {
+        rotation: randomAngle(direction),
+        ease: Sine.easeInOut,
+        onComplete: rotate,
+        onCompleteParams: [target, direction * -1]
     });
+}
 
-    for (var i = 0; i < slides.length; i++) {
-        //Create the dots
-        var dots = document.createElement('div');
-        dots.className = 'dot';
-        dots.id = 'dot' + i;
-        dots.addEventListener('click', function () { tl.seek(this.id).pause() });
-        document.getElementById('dots').appendChild(dots);
-        tl.addPause('dot' + i)
-  
-        if (i != slides.length - 1) {
-            tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
-                .to(slides[i], 0.7, { xPercent: -100, rotationY: 80 }, 'L' + i)
-                .from(slides[i + 1], 0.7, { xPercent: 100, rotationY: -80 }, 'L' + i)
-                .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
-        }
-    };
+function moveX(target, direction) {
+
+    gsap.to(target, randomTime(), {
+        x: randomX(direction),
+        ease: Sine.easeInOut,
+        onComplete: moveX,
+        onCompleteParams: [target, direction * -1]
+    });
+}
+
+function moveY(target, direction) {
+
+    gsap.to(target, randomTime(), {
+        y: randomY(direction),
+        ease: Sine.easeInOut,
+        onComplete: moveY,
+        onCompleteParams: [target, direction * -1]
+    });
+}
+
+function random(min, max) {
+    const delta = max - min;
+    return (direction = 1) => (min + delta * Math.random()) * direction;
+}
 
 
-    //Dot colors and animations 
-    document.getElementById('dot0').style.backgroundColor = 'rgba(255,255,255,1)';
-    for (var i = 0; i < slides.length - 1; i++) {
-        tl.to('#dot' + (i + 1), 0.7, { backgroundColor: 'rgba(255,255,255,1)' }, 'L' + i)
-        tl.to('#dot' + (i), 0.7, { backgroundColor: 'rgba(255,255,255,0.2)' }, 'L' + i)
+
+//PROJECTS PAGE ANIMATIONS
+// Projects slides
+gsap.set('#projects', { perspective: 700 });
+var slides = document.querySelectorAll('.slide');
+tl = gsap.timeline({
+    paused: true
+});
+
+for (var i = 0; i < slides.length; i++) {
+    //Create the dots
+    var dots = document.createElement('div');
+    dots.className = 'dot';
+    dots.id = 'dot' + i;
+    dots.addEventListener('click', function () { tl.seek(this.id).pause() });
+    document.getElementById('dots').appendChild(dots);
+    tl.addPause('dot' + i)
+
+    if (i != slides.length - 1) {
+        tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
+            .to(slides[i], 0.7, { xPercent: -100, rotationY: 80 }, 'L' + i)
+            .from(slides[i + 1], 0.7, { xPercent: 100, rotationY: -80 }, 'L' + i)
+            .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
     }
+};
 
-    //Navigate between the slides
-    function GO(e) {
-        console.log(tl.totalProgress())
-        if (tl.totalProgress() == 1 && e != -1)
-            tl.progress(0).pause();
-        else if (tl.totalProgress() == 0) {
-            if (e > 0)
-                tl.play()
-        } else {
-            if (e > 0)
-                tl.play()
-            else
-                tl.reverse()
-        }
-    };
 
-    //Show  and hide info when mouse hovers or outs on a project
-    const showInfo = (e) => {
-        let info = e.parentElement.lastElementChild
-        info.style.visibility = 'visible'
-        if (e.classList.contains('left'))
-            gsap.set(info, { x: '-100%' });
+//Dot colors and animations 
+document.getElementById('dot0').style.backgroundColor = 'rgba(255,255,255,1)';
+for (var i = 0; i < slides.length - 1; i++) {
+    tl.to('#dot' + (i + 1), 0.7, { backgroundColor: 'rgba(255,255,255,1)' }, 'L' + i)
+    tl.to('#dot' + (i), 0.7, { backgroundColor: 'rgba(255,255,255,0.2)' }, 'L' + i)
+}
+
+//Navigate between the slides
+function GO(e) {
+    console.log(tl.totalProgress())
+    if (tl.totalProgress() == 1 && e != -1)
+        tl.progress(0).pause();
+    else if (tl.totalProgress() == 0) {
+        if (e > 0)
+            tl.play()
+    } else {
+        if (e > 0)
+            tl.play()
         else
-            gsap.set(info, { x: '100%' });
-           
-    
+            tl.reverse()
     }
+};
 
-    const hideInfo = (e) => {
-        let info = e.parentElement.lastElementChild
-        info.style.visibility = 'hidden'
-        gsap.set(info, {
-            x: '0%',
-        })
-    }
+//Show  and hide info when mouse hovers or outs on a project
+const showInfo = (e) => {
+    let info = e.parentElement.lastElementChild
+    info.style.visibility = 'visible'
+    if (e.classList.contains('left'))
+        gsap.set(info, { x: '-100%' });
+    else
+        gsap.set(info, { x: '100%' });
+}
 
-    document.getElementById('nextBtn').addEventListener("click", function () { GO(1) });
-    document.getElementById('prevtBtn').addEventListener("click", function () { GO(-1) });
+const hideInfo = (e) => {
+    let info = e.parentElement.lastElementChild
+    info.style.visibility = 'hidden'
+    gsap.set(info, {
+        x: '0%',
+    })
+}
+
+document.getElementById('nextBtn').addEventListener("click", function () { GO(1) });
+document.getElementById('prevtBtn').addEventListener("click", function () { GO(-1) });
     
 
 
