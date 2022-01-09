@@ -243,6 +243,11 @@ i {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
   #main,
   #projects,
   #prevtBtn,
