@@ -89,9 +89,9 @@ i {
 }
 
 /* Projects Page */
-/* #projects-mobile {
+#projects-mobile {
   display: none;
-} */
+}
 #projects {
   position: relative;
   z-index: 1;
@@ -278,6 +278,9 @@ i {
   }
 
   /* Projects */
+  #projects-mobile {
+    display: block;
+  }
   .project-img {
     height: 100px;
     width: 100px;
