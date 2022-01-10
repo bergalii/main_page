@@ -89,6 +89,9 @@ i {
 }
 
 /* Projects Page */
+/* #projects-mobile {
+  display: none;
+} */
 #projects {
   position: relative;
   z-index: 1;
@@ -281,7 +284,8 @@ i {
   }
 
   .btn-project {
-    width: 50px;
-    height: 100%;
+    width: 60px;
+    height: 75px;
+    font-weight: bold;
   }
 }
