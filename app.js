@@ -5,13 +5,17 @@ const arrow = document.querySelector('.arrow');
 const arrowInfo = document.querySelector('.arrow-info');
 const height = window.innerHeight;
 const width = window.innerWidth;    
-console.log(width);
 
-//Make sure to go the top  after each reload and disable scrolling until arrow animation completes
-window.onbeforeunload = function () { window.scrollTo(0, 0) };
-document.body.style.overflow = "hidden";
+if (width < 600) {
+    screen.orientation.lock('portrait')
+}
 
 if (width > 600) {
+    //Make sure to go the top  after each reload and disable scrolling until arrow animation completes
+    window.onbeforeunload = function () { window.scrollTo(0, 0) };
+    console.log('hidden')
+    document.body.style.overflow = "hidden";
+
     //ARROW ANIMATIONS
     //Set the poisiton of the arrow in HTML
     const setPosition = (rot, posy) => {
@@ -24,7 +28,6 @@ if (width > 600) {
             onComplete: () => setTimeout(function () { arrowInfo.style.visibility = 'hidden' }, 3000)
         });
     }
-
 
     //Make arrow repeatedly scale
     let tweenArrow = gsap.to(arrow, {
@@ -90,7 +93,7 @@ if (width > 600) {
 
 
     //Scroll between projects and first page
-    const scrollBetween = () => {
+    var scrollBetween = () => {
         if (!arrow.classList.contains('down')) {
             gsap.to(window, {
                 duration: 2,
@@ -214,7 +217,6 @@ for (var i = 0; i < slides.length - 1; i++) {
 
 //Navigate between the slides
 function GO(e) {
-    console.log(tl.totalProgress())
     if (tl.totalProgress() == 1 && e != -1)
         tl.progress(0).pause();
     else if (tl.totalProgress() == 0) {

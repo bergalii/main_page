@@ -21,7 +21,6 @@ header {
 }
 
 body {
-  perspective: 1000px;
   justify-content: center;
   align-content: center;
 }
@@ -255,6 +254,8 @@ i {
     display: none;
   }
 
+  /* Main Page */
+
   #main-page-mobile {
     display: block;
   }
@@ -271,5 +272,16 @@ i {
   .word {
     color: white !important;
     font-size: medium;
+  }
+
+  /* Projects */
+  .project-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .btn-project {
+    width: 50px;
+    height: 100%;
   }
 }
