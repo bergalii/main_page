@@ -64,41 +64,74 @@
                 </div>
             </div>
             <div class="container vh-100 dark col text-light" id="project-container">
-                <div style="height: 10vh;" class="row">
+                <div style="height: 7.5vh;" class="row">
                     <h1 class="fst-italic p-2">My <span class="lime">Projects</span></h1>
                 </div>
-                <div style="height: 30vh; margin: 0;" class="row container border-bottom border-top">
+                <div style="height: 30vh; margin: 0;" class="row container border-bottom border-top" onmouseover="
+                    showDescription(this)" onmouseout="hideDescription(this)">
+                    <div style="display: none;" class="description"
+                        onclick="window.open('https://www.youtube.com/watch?v=IDcyxaFj86E', '_blank')">
+                        <h5 class="mt-4 lime"> Bsc. Graduation Project</h5>
+                        <h5 class="mt-2"> Integration of new sensors & software development on an underwater vehicle in
+                            ROS framework</h5>
+                    </div>
                     <img src="./images/robot.png" class="project-img" alt="">
                 </div>
-                <div style="height: 30vh; margin: 0;" class="row container border-bottom">
+                <div style="height: 30vh; margin: 0;" class="row container border-bottom"
+                    onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
+                    <div style="display: none;" class="description" onclick="window.open('poster.pdf')">
+                        <h5 class="mt-4 lime"> TUHH - Fishing for Experience Project</h5>
+                        <h5 class="mt-2"> Building a CNN from scratch and integration of the model to web using
+                            Tensorflow & Tensorflow.js</h5>
+                    </div>
                     <img src="./images/neural_network.png" class="project-img" alt=""
                         onclick="window.open('poster.pdf')">
                 </div>
-                <div style="height: 30vh;  margin: 0;" class="row container ">
-                    <div class="row">
-                        <div style="height: 15vh;" class="col container border-right">
-                            <img src="./images/fangs.png" class="project-img" alt=""
-                                onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
+                <div style="height: 30vh; margin: 0;" class="row container" onmouseover="showList(this)"
+                    onmouseout="hideList(this)">
+                    <div>
+                        <div class="row">
+                            <div style="height: 15vh; " class="col container border-right">
+                                <img src="./images/fangs.png" class="project-img" alt="">
+                            </div>
+                            <div style="height: 15vh;" class="col container">
+                                <img src="./images/nba.png" class="project-img" alt=""
+                                    onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
+                            </div>
                         </div>
-                        <div style="height: 15vh;" class="col container">
-                            <img src="./images/nba.png" class="project-img" alt=""
-                                onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
+                        <div class="row">
+                            <div style="height: 15vh;" class="col container">
+                                <img src="./images/card.png" class="project-img" alt=""
+                                    onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
+                            </div>
+                            <div style="height: 15vh;" class="col container">
+                                <img src="./images/trivia.png" class="project-img" alt=""
+                                    onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div style="height: 15vh;" class="col container">
-                            <img src="./images/card.png" class="project-img" alt=""
+                    <div style="display: none;">
+                        <h5>Various <span class="lime">REACT</span> projects</h5>
+                        <ul class="list-group">
+                            <a href=" #" class="list-group-item list-group-item-action"
                                 onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
-                        </div>
-                        <div style="height: 15vh;" class="col container">
-                            <img src="./images/trivia.png" class="project-img" alt=""
-                                onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
-                        </div>
+                                Vampires vs Villagers
+                            </a>
+                            <a href=" #" class="list-group-item list-group-item-action"
+                                onclick="window.open('https://buildyournbateam.netlify.app/','_blank')">NBA Team
+                                Builder</a>
+                            <a href="#" class="list-group-item list-group-item-action"
+                                onclick="window.open('https://matchthepictures.netlify.app/','_blank')">Match the
+                                Pictures</a>
+                            <a href="#" class="list-group-item list-group-item-action"
+                                onclick="window.open('https://triviaquizz.netlify.app/','_blank')">Trivia Quiz</a>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

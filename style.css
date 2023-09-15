@@ -32,6 +32,10 @@ body {
     width: 100%;
 }
 
+.description {
+    cursor: pointer;
+}
+
 
 #project-container {
     padding: 0;
