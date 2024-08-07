@@ -1,137 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Berk's Website | Welcome!</title>
-</head>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      .lime {
+        color: #32cd32;
+      }
+      .nav-link {
+        color: #ffffff;
+      }
+      .nav-link:hover {
+        color: #32cd32;
+      }
+      .project-card {
+        transition: transform 0.3s ease-in-out;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
 
-<body>
-    <div id="main" class="container d-flex text-responsive text-center">
-        <div class="row flex-grow-1 ">
-            <div class="container vh-100 dark col text-light">
-                <h1 class="fst-italic p-2">About <span class="lime">Me</span></h1>
-                <p class="lh-2 text-start">
-                    My name is Berk Ali Çam. I currently live in Hamburg,Germany.
-                    Altough i have a mechanical engineering background, i discovered my passion
-                    for coding towards the end of my Bsc. I have been self-learning programming since three
-                    years and my goal is to pursue a career in which i can develop myself both in
-                    mechanical and software engineering . Besides trying to create web applications and working
-                    as a web developer for a short period of time, i also participated in a semi-autonomous
-                    underwater vehicle project as my graduation project
-                    and learned about ROS while carrying out the project.
-                    Then after I started the Master's program at Hamburg Technical University, I turned my focus into
-                    machine learning applications, so I try to improve everyday on that field, and I am
-                    looking forward to continue my career here in Germany. Another aspect why I want to stay in Germany
-                    is, I've been learning German since three
-                    years, and staying in Germany for six months as an exchange student back in 2020
-                    not only helped me practice my German, but also made me fall in love with the German
-                    culture. That is why I decided to come back and now I'm enrolled in Msc. Mechatronics at
-                    TUHH.
-                </p>
-            </div>
-            <div class="container vh-100 col gradient ">
-                <img src="./images/berk_photo.jpg" class="rounded-circle img-fluid mt-2 mb-2 " alt="">
-                <div class="text-white p-3 dark border rounded">
-                    <h1 class="fst-italic text-center">Berk Ali <span class="lime">Çam</span></h1>
-                    <div class="d-flex">
-                        <i class="fas fa-map-marker-alt fa-2x p-2"></i>
-                        <h4 class="align-self-center flex-fill mb-0">Hamburg,Germany</h4>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fas fa-envelope fa-2x p-2"></i>
-                        <h4 class="align-self-center flex-fill mb-0">berkacam97@hotmail.com</h4>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fab fa-github fa-2x p-2"></i>
-                        <a class="link-underline link-underline-opacity-0 lime align-self-center flex-fill"
-                            target="_blank" href="https://github.com/bergalii">
-                            <h4 class="align-self-center mb-0">Github Page</h4>
-                        </a>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fas fa-file-pdf fa-2x p-2"></i>
-                        <a class="link-underline link-underline-opacity-0 lime align-self-center flex-fill"
-                            href="Berk_CV.pdf" download>
-                            <h4 class="align-self-center mb-0">Download my CV</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="container vh-100 dark col text-light" id="project-container">
-                <div style="height: 7.5vh;" class="row">
-                    <h1 class="fst-italic p-2">My <span class="lime">Projects</span></h1>
-                </div>
-                <div style="height: 30vh; margin: 0;" class="row container border-bottom border-top" onmouseover="
-                    showDescription(this)" onmouseout="hideDescription(this)">
-                    <div style="display: none;" class="description"
-                        onclick="window.open('https://www.youtube.com/watch?v=IDcyxaFj86E', '_blank')">
-                        <h5 class="mt-4 lime"> Bsc. Graduation Project</h5>
-                        <h5 class="mt-2"> Integration of new sensors & software development on an underwater vehicle in
-                            ROS framework</h5>
-                    </div>
-                    <img src="./images/robot.png" class="project-img" alt="">
-                </div>
-                <div style="height: 30vh; margin: 0;" class="row container border-bottom"
-                    onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
-                    <div style="display: none;" class="description" onclick="window.open('poster.pdf')">
-                        <h5 class="mt-4 lime"> TUHH - Fishing for Experience Project</h5>
-                        <h5 class="mt-2"> Building a CNN from scratch and integration of the model to web using
-                            Tensorflow & Tensorflow.js</h5>
-                    </div>
-                    <img src="./images/neural_network.png" class="project-img" alt=""
-                        onclick="window.open('poster.pdf')">
-                </div>
-                <div style="height: 30vh; margin: 0;" class="row container" onmouseover="showList(this)"
-                    onmouseout="hideList(this)">
-                    <div>
-                        <div class="row">
-                            <div style="height: 15vh; " class="col container border-right">
-                                <img src="./images/fangs.png" class="project-img" alt="">
-                            </div>
-                            <div style="height: 15vh;" class="col container">
-                                <img src="./images/nba.png" class="project-img" alt="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div style="height: 15vh;" class="col container">
-                                <img src="./images/card.png" class="project-img" alt="">
-                            </div>
-                            <div style="height: 15vh;" class="col container">
-                                <img src="./images/trivia.png" class="project-img" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display: none;">
-                        <h5 class="mt-2">Various <span class="lime">REACT</span> projects</h5>
-                        <ul class="list-group">
-                            <a href=" #" class="list-group-item list-group-item-action"
-                                onclick="window.open('https://vampire-vs-villagers.netlify.app/','_blank')">
-                                Vampires vs Villagers
-                            </a>
-                            <a href=" #" class="list-group-item list-group-item-action"
-                                onclick="window.open('https://buildyournbateam.netlify.app/','_blank')">NBA Team
-                                Builder</a>
-                            <a href="#" class="list-group-item list-group-item-action"
-                                onclick="window.open('https://matchthepictures.netlify.app/','_blank')">Match the
-                                Pictures</a>
-                            <a href="#" class="list-group-item list-group-item-action"
-                                onclick="window.open('https://triviaquizz.netlify.app/','_blank')">Trivia Quiz</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          >Berk Ali <span class="lime">Çam</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+          </ul>
         </div>
-    </div>
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-</body>
+      </div>
+    </nav>
 
+    <div class="container mt-5">
+      <div class="row" id="about">
+        <div class="col-md-4 text-center">
+          <img
+            src="./images/berk_photo.jpg"
+            class="rounded-circle img-fluid mb-3"
+            alt="Berk Ali Çam"
+          />
+          <h2>Berk Ali <span class="lime">Çam</span></h2>
+          <p><i class="fas fa-map-marker-alt"></i> Hamburg, Germany</p>
+          <p><i class="fas fa-envelope"></i> berkacam97@hotmail.com</p>
+          <a
+            href="https://github.com/bergalii"
+            target="_blank"
+            class="btn btn-outline-light"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a href="Berk_CV.pdf" download class="btn btn-outline-success"
+            ><i class="fas fa-file-pdf"></i> Download CV</a
+          >
+        </div>
+        <div class="col-md-8">
+          <h3 class="mb-4">About <span class="lime">Me</span></h3>
+          <p>
+            My name is Berk Ali Çam. I currently live in Hamburg, Germany.
+            Although I have a mechanical engineering background, I discovered my
+            passion for coding towards the end of my BSc. I have been
+            self-learning programming for three years, and my goal is to pursue
+            a career where I can develop myself in both mechanical and software
+            engineering.
+          </p>
+          <p>
+            I've participated in a semi-autonomous underwater vehicle project
+            and learned about ROS. Currently, I'm enrolled in the MSc.
+            Mechatronics program at TUHH, focusing on machine learning
+            applications. I have done projects in the computer vision field as well as generative AI field.
+          </p>
+          <p>
+            I'm also passionate about German culture and have been
+            learning the language for three years.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-5" id="projects">
+        <h3 class="mb-4">My <span class="lime">Projects</span></h3>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-light project-card">
+            <img
+              src="./images/robot.png"
+              class="card-img-top"
+              alt="Underwater Vehicle"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Underwater Vehicle Project</h5>
+              <p class="card-text">
+                Integration of new sensors & software development on an
+                underwater vehicle in ROS framework
+              </p>
+              <a
+                href="https://www.youtube.com/watch?v=IDcyxaFj86E"
+                target="_blank"
+                class="btn btn-outline-light"
+                >Watch Video</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-light project-card">
+            <img
+              src="./images/neural_network.png"
+              class="card-img-top"
+              alt="CNN Project"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Fishing for Experience Project</h5>
+              <p class="card-text">
+                Building a CNN from scratch and integration of the model to web
+                using Tensorflow & Tensorflow.js
+              </p>
+              <a href="poster.pdf" target="_blank" class="btn btn-outline-light"
+                >View Poster</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-light project-card">
+            <img
+              src="./images/music_generation.jpg"
+              class="card-img-top"
+              alt="Music Generation"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Painting Generation From Music</h5>
+              <p class="card-text">
+                Deep learning project for generating paintings from music
+              </p>
+              <a
+                href="https://paprojecttuhh.netlify.app/"
+                target="_blank"
+                class="btn btn-outline-light"
+                >Visit Project</a
+              >
+            </div>
+          </div>
+        </div>
+        <h3 class="mb-4">
+            Various <span class="lime">REACT</span> Projects
+          </h4>
+        <div class="card bg-dark text-light project-card">
+          <div class="row">
+            <div class="col-md-3 col-6 mb-3 text-center">
+              <img
+                src="./images/fangs.png"
+                class="img-fluid mb-2"
+                alt="Vampires vs Villagers"
+              />
+              <a
+                href="https://vampire-vs-villagers.netlify.app/"
+                target="_blank"
+                class="btn btn-outline-light btn-sm"
+                >Vampires vs Villagers</a
+              >
+            </div>
+            <div class="col-md-3 col-6 mb-3 text-center">
+              <img
+                src="./images/nba.png"
+                class="img-fluid mb-2"
+                alt="NBA Team Builder"
+              />
+              <a
+                href="https://buildyournbateam.netlify.app/"
+                target="_blank"
+                class="btn btn-outline-light btn-sm"
+                >NBA Team Builder</a
+              >
+            </div>
+            <div class="col-md-3 col-6 mb-3 text-center">
+              <img
+                src="./images/card.png"
+                class="img-fluid mb-2"
+                alt="Match the Pictures"
+              />
+              <a
+                href="https://matchthepictures.netlify.app/"
+                target="_blank"
+                class="btn btn-outline-light btn-sm"
+                >Match the Pictures</a
+              >
+            </div>
+            <div class="col-md-3 col-6 mb-3 text-center">
+              <img
+                src="./images/trivia.png"
+                class="img-fluid mb-2"
+                alt="Trivia Quiz"
+              />
+              <a
+                href="https://triviaquizz.netlify.app/"
+                target="_blank"
+                class="btn btn-outline-light btn-sm"
+                >Trivia Quiz</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
